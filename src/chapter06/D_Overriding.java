@@ -65,7 +65,7 @@ class CatClass extends AnimalClass {
 	}
 }
 
-public class D_Overrriding {
+public class D_Overriding {
 	public static void main(String[] args) {
 		ChildClass childClass = new ChildClass();
 		childClass.exercise(); // 달리기를 잘합니다.
