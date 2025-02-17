@@ -106,6 +106,5 @@ public class C_Inhritance {
 		cat2.displayCat();
 		
 		cat2.displayMammal(); // 나비
-		
 	}
 }
