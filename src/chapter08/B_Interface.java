@@ -43,7 +43,6 @@ interface PlayingCard {
 		// default 반환타입 메서드명() {}
 		System.out.println("디폴트 메서드입니다.");
 	}
-	
 //	void defaultMethod2() {
 //		System.out.println("default 키워드 생략 불가");
 //	}
