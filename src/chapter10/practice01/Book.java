@@ -21,7 +21,7 @@ public class Book extends Item {
 		this.stock = stock;
 		this.category = category;
 	}
-	
+	main
 	public String getIsbn() { return isbn; }
 	public String getAuthor() { return author; }
 	public String getPublisher() { return publisher; }
