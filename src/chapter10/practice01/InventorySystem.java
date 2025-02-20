@@ -3,7 +3,6 @@ package chapter10.practice01;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-
 // Inventory: 재고 관리
 public class InventorySystem {
 	public static void main(String[] args) {
@@ -116,9 +115,10 @@ public class InventorySystem {
 					System.out.println("If you want to exit, please enter 'Y'");
 					if (sc.nextLine().equalsIgnoreCase("y")) {
 						System.out.println("=== Exiting ===");
-						return;						
-					}
-					System.out.println("Please try again!");
+						sc.close();
+						return;
+					} 
+						System.out.println("Please try again!");
 				default:
 					System.out.println("Invalid option. Try again!");
 				}
@@ -130,7 +130,6 @@ public class InventorySystem {
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-			sc.close();
 		}
 	}
 }
