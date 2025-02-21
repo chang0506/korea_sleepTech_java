@@ -98,6 +98,5 @@ public class D_Coupling_Chohesion {
 		StudentCohesion student = new StudentCohesion("전창현");
 		Attendance attendance = new Attendance();
 		attendance.checkAttendance(mathTeacher, student);
-		
 	}
 }
