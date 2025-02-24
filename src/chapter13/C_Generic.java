@@ -80,6 +80,6 @@ public class C_Generic {
 		
 		double totalFurnitures = DiscountPolicy.applyDiscount(furnitures, 0.2);
 		
-		System.out.println("총 가구 할인액: " + totalFurnitures + "원"); // 총 가구 할인액: 90.0	
+		System.out.println("총 가구 할인액: " + totalFurnitures + "원"); // 총 가구 할인액: 90.0원	
 	}
 }
