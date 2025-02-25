@@ -76,7 +76,7 @@ public class D_Lambda {
 		};
 		System.out.println("익명 클래스 결과: " + calculator1.add(3, 5)); // 8
 		
-		// 2) 기본 표현 - 람다식
+		// 1) 기본 표현 - 람다식
 		// : 람다식의 경우 구현부가 한 줄 일때 중괄호({}, 코드블록) 생략 가능
 		//		>> return 키워드까지 생략(값은 반환)
 		Calculator calculator2 = (a, b) -> a + b;
