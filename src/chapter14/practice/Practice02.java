@@ -2,6 +2,7 @@ package chapter14.practice;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import lombok.AllArgsConstructor;
@@ -60,5 +61,23 @@ public class Practice02 {
 				.collect(Collectors.toList());
 		
 		employeeNameWithKang.forEach(System.out::println);
+		
+		// 4. 부서별 직원 그룹화
+		// Collectors 클래스 - groupingBy
+		Map<String, List<Employee>> emplGroup = employees.stream()
+//			.collect(Collectors.groupingBy(g -> g.getDepartment()));
+		.collect(Collectors.groupingBy(Employee::getDepartment));
+		
+		System.out.println(emplGroup);
+		
+		// 5. 부서별 평균 급여 계산
+		// Collectors 클래스 - groupingBy, avaragingInt(각 직원의 급여를 전달
+		Map<String, Double> avgSalary = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartment,
+						Collectors.averagingInt(Employee::getSalary)));
+		
+		// cf) 정수값의 평균값은 실수 반환 가능성 존재 Value값은 Double로 받음
+		// 16 + 21 + 12 / 3 >> 49 / 3
+		System.out.println(avgSalary);
 	}
 }
