@@ -1,4 +1,4 @@
-package chapter16.review;
+package chapter16;
 
 import lombok.Getter;
 
@@ -65,4 +65,5 @@ public class C_Enum {
 			break;
 		}
 	}
+
 }
