@@ -1,6 +1,5 @@
 package chapter15.boardApp.entity;
 
-import chapter15.boardApp.dto.BoardResponseDto;
 import lombok.Data;
 
 /*

@@ -92,3 +92,4 @@ public class BoardController {
 		return result; // result값이 true가 되려면 모든 값에 null이 아니며 실질적 데이터가 존재
 	}
 }
+
