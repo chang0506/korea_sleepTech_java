@@ -40,7 +40,7 @@ public class TaskImpl implements TaskService {
 		try {
 			validateUser(dto.getUserId());
 			
-			Task task = new Task(generatedRecordId(), dto.getUserId(), dto.getText(), dto.getNickname(), dto.getDate());
+			Task task = new Task(generatedRecordId(), dto.getUserId(), dto.getText(), dto.getTitle(), dto.getDate());
 			taskRep.save(task);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -55,7 +55,7 @@ public class TaskImpl implements TaskService {
 			List<Task> tasks = taskRep.findAll();
 			
 			respDtos = tasks.stream()
-					.map(t -> new TaskRespDto(t.getId(), t.getUserId(), t.getText(),t.getNickname(), t.getDate()))
+					.map(t -> new TaskRespDto(t.getId(), t.getUserId(), t.getText(),t.getTitle(), t.getDate()))
 							.collect(Collectors.toList());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -73,7 +73,7 @@ public class TaskImpl implements TaskService {
 			
 			respDto = tasks.stream()
 					.filter(c -> c.getText().contains(text))
-					.map(t -> new TaskRespDto(t.getId(), t.getUserId(), t.getText(),t.getNickname(), t.getDate()))
+					.map(t -> new TaskRespDto(t.getId(), t.getUserId(), t.getText(),t.getTitle(), t.getDate()))
 					.collect(Collectors.toList());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

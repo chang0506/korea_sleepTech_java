@@ -11,6 +11,6 @@ public class TaskReqDto {
 	private Long id;
 	private Long userId;
 	private String text;
-	private String nickname;
+	private String title;
 	private Date date;
 }
