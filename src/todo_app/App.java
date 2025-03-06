@@ -15,7 +15,6 @@ public class App {
     private static final Scanner sc = new Scanner(System.in);
     private static final UserController userController = new UserController();
     private static final TaskController taskController = new TaskController();
-    private static boolean isLoggedIn = false;
 
     private static void displayMenu() {
         System.out.println("\n[메뉴 선택]");
@@ -90,12 +89,9 @@ public class App {
             case 2:
                 UserSigninReqDto signinRequest = createUserSigninRequest();
                 userController.signInUser(signinRequest);
-                isLoggedIn = true;
                 break;
             case 3:
-                userController.service.logout();
-                isLoggedIn = false;
-                System.out.println("로그아웃 되었습니다.");
+            	userController.service.logout();
                 break;
             case 4:
                 List<UserRespDto> users = userController.getAllUser();

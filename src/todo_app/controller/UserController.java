@@ -23,6 +23,9 @@ public class UserController {
 		service.signIn(dto.getUserId(), dto.getPassword());
 	}
 	
+	public void logout() {
+		service.logout();
+	}
 	public List<UserRespDto> getAllUser() {
 		List<UserRespDto> users = service.getAllUser();
 		return users;
