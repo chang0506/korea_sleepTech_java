@@ -66,7 +66,7 @@ public class App {
 		return new UserSignupReqDto(null, userId, password, passwordCheck, username, email, phone, age, nickname);
 	}
 
-	private static UserSigninReqDto createUserSigninRequest() {
+	private static UserSigninReqDto userSigninRequest() {
 		System.out.println("[로그인]");
 		String userId = getInput("아이디");
 		String password = getInput("비밀번호");
@@ -77,8 +77,8 @@ public class App {
 		System.out.println("[할일 추가]");
 		long userId = getIdInput();
 		String text = getInput("할일 내용");
-		String nickname = getInput("닉네임");
-		return new TaskReqDto(null, userId, text, nickname, new java.util.Date());
+		String title = getInput("타이틀을 입력하세요");
+		return new TaskReqDto(null, userId, text, title, new java.util.Date());
 	}
 
 	private static boolean processChoice(int choice) {
@@ -88,14 +88,13 @@ public class App {
 			userController.signUpUser(signupRequest);
 			break;
 		case 2:
-			UserSigninReqDto signinRequest = createUserSigninRequest();
+			UserSigninReqDto signinRequest = userSigninRequest();
 			userController.signInUser(signinRequest);
+			isLoggedIn = true;
 			break;
 		case 3:
-			if (isLoggedIn) {
-				userController.service.logout();
-				isLoggedIn = false;
-			}
+			userController.logout();
+			isLoggedIn = false;
 			break;
 		case 4:
 			List<UserRespDto> users = userController.getAllUser();
